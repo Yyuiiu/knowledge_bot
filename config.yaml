@@ -1,0 +1,28 @@
+#大規模言語モデルの設定
+llm:
+  provider: groq
+  model: llama-3.3-70b-versatile
+  temperature: 0.0
+  max_tokens: 1024
+
+#埋め込みモデルの設定（文字→ベクトル変換）
+embedding:
+  model: intfloat/multilingual-e5-small
+
+#検索の仕組みの設定(長い文章を塊に切り分ける)
+rag:
+  chunk_size: 600
+  chunk_overlap: 100
+  top_k: 4
+
+#ディレクトリ設定(ファイルの置き場所を指定)
+paths:
+  #人語の文書
+  docs_dir: docs/
+  #ベクトル化された情報倉庫
+  vectorstore_dir: vectorstore/chroma
+  ingested_log: vectorstore/ingested.json
+
+#json:処理済みファイルの記録帳（ingested.json）を読み書きするためのデータの整理係
+#OSの機能を使ってフォルダ操作などを行う基本操作担当
+#
