@@ -2,4 +2,4 @@ venv/
 vectorstore/
 .env
 __pycache__/
-docs
+/knowledge_bot/docs
